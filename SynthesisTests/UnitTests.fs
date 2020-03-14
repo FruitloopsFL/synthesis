@@ -25,11 +25,13 @@ let ``abelar`` () =
 [<Test>]
 let ``area`` () =
     area 15.0 23.0 |> should equal 172.5
+    
     (fun () -> area -4.0 -10.0) |> shouldFail
     (fun () -> area -5.0 11.0) |> shouldFail
     (fun () -> area 3.0 -9.0) |> shouldFail
     (fun () -> area 0.0 -8.0) |> shouldFail
     (fun () -> area -12.0 0.0) |> shouldFail
+    
     area 4.0 10.0 |> should equal 20.0
     area 0.0 190.0 |> should equal 0.0
     area 85.2 12.6 |> should equal 536.76
@@ -143,8 +145,10 @@ let ``minmax`` () =
 
 [<Test>]
 let ``isLeap`` () =
+    
     (fun () -> isLeap 1581) |> shouldFail
     (fun () -> isLeap -3) |> shouldFail
+    
     isLeap 1582 |> should equal false
     isLeap 1583 |> should equal false
     isLeap 1584 |> should equal true
@@ -162,6 +166,7 @@ let ``isLeap`` () =
     isLeap 2018 |> should equal false
     isLeap 2019 |> should equal false
     isLeap 2020 |> should equal true
+    
 
 [<Test>]
 let ``month`` () =
